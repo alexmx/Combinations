@@ -8,6 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
+typedef NSArray<NSArray *> ValuesCollection;
+
 @interface CombinationsSpec : XCTestCase
+
+- (void)assertCombination:(nonnull NSArray *)combination;
 
 @end

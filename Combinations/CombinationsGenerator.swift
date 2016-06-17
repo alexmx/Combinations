@@ -8,15 +8,16 @@
 
 import Foundation
 
-public typealias Matrix = Array<Array<AnyObject>>
+public typealias ValuesCollection = Array<Array<AnyObject>>
 
-public final class CombinationsGenerator {
+@objc
+public final class CombinationsGenerator: NSObject {
     
-    func cartesianProduct(matrix: Matrix) -> Matrix {
+    func cartesianProduct(matrix: ValuesCollection) -> ValuesCollection {
         
         let productSize = matrix.reduce(1) { $0 * $1.count }
         
-        var product = Matrix()
+        var product = ValuesCollection()
         for i in 0..<productSize {
             var cross = [AnyObject]()
             var n = i
@@ -28,5 +29,9 @@ public final class CombinationsGenerator {
         }
         
         return product
+    }
+    
+    public func combinations(forValuesCollection valuesCollection: ValuesCollection) -> ValuesCollection {
+        return cartesianProduct(valuesCollection)
     }
 }
