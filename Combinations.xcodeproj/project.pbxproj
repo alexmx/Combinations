@@ -13,6 +13,12 @@
 		CD665A861D101D8600F33632 /* CombinationsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD665A851D101D8600F33632 /* CombinationsGenerator.swift */; };
 		CD665A891D101E8500F33632 /* CombinationsSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = CD665A871D101E8500F33632 /* CombinationsSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD665A8A1D101E8500F33632 /* CombinationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD665A881D101E8500F33632 /* CombinationsSpec.m */; };
+		CDDA53901D18119F00C559B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA538F1D18119F00C559B8 /* AppDelegate.swift */; };
+		CDDA53921D18119F00C559B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53911D18119F00C559B8 /* ViewController.swift */; };
+		CDDA53951D18119F00C559B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDA53931D18119F00C559B8 /* Main.storyboard */; };
+		CDDA53971D18119F00C559B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDA53961D18119F00C559B8 /* Assets.xcassets */; };
+		CDDA539A1D18119F00C559B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDA53981D18119F00C559B8 /* LaunchScreen.storyboard */; };
+		CDDA53A51D18119F00C559B8 /* CombinationsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53A41D18119F00C559B8 /* CombinationsDemoUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +28,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CD665A6A1D101CCF00F33632;
 			remoteInfo = Combinations;
+		};
+		CDDA53A11D18119F00C559B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD665A621D101CCF00F33632 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDDA538C1D18119F00C559B8;
+			remoteInfo = CombinationsDemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -35,6 +48,16 @@
 		CD665A851D101D8600F33632 /* CombinationsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationsGenerator.swift; sourceTree = "<group>"; };
 		CD665A871D101E8500F33632 /* CombinationsSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinationsSpec.h; sourceTree = "<group>"; };
 		CD665A881D101E8500F33632 /* CombinationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinationsSpec.m; sourceTree = "<group>"; };
+		CDDA538D1D18119F00C559B8 /* CombinationsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombinationsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDA538F1D18119F00C559B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDDA53911D18119F00C559B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDDA53941D18119F00C559B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDDA53961D18119F00C559B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDDA53991D18119F00C559B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CDDA539B1D18119F00C559B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDDA53A01D18119F00C559B8 /* CombinationsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombinationsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDA53A41D18119F00C559B8 /* CombinationsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsDemoUITests.swift; sourceTree = "<group>"; };
+		CDDA53A61D18119F00C559B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +76,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDDA538A1D18119F00C559B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDA539D1D18119F00C559B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +98,8 @@
 			children = (
 				CD665A6D1D101CCF00F33632 /* Combinations */,
 				CD665A791D101CCF00F33632 /* CombinationsTests */,
+				CDDA538E1D18119F00C559B8 /* CombinationsDemo */,
+				CDDA53A31D18119F00C559B8 /* CombinationsDemoUITests */,
 				CD665A6C1D101CCF00F33632 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +109,8 @@
 			children = (
 				CD665A6B1D101CCF00F33632 /* Combinations.framework */,
 				CD665A751D101CCF00F33632 /* CombinationsTests.xctest */,
+				CDDA538D1D18119F00C559B8 /* CombinationsDemo.app */,
+				CDDA53A01D18119F00C559B8 /* CombinationsDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +134,28 @@
 				CD665A7C1D101CCF00F33632 /* Info.plist */,
 			);
 			path = CombinationsTests;
+			sourceTree = "<group>";
+		};
+		CDDA538E1D18119F00C559B8 /* CombinationsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA538F1D18119F00C559B8 /* AppDelegate.swift */,
+				CDDA53911D18119F00C559B8 /* ViewController.swift */,
+				CDDA53931D18119F00C559B8 /* Main.storyboard */,
+				CDDA53961D18119F00C559B8 /* Assets.xcassets */,
+				CDDA53981D18119F00C559B8 /* LaunchScreen.storyboard */,
+				CDDA539B1D18119F00C559B8 /* Info.plist */,
+			);
+			path = CombinationsDemo;
+			sourceTree = "<group>";
+		};
+		CDDA53A31D18119F00C559B8 /* CombinationsDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA53A41D18119F00C559B8 /* CombinationsDemoUITests.swift */,
+				CDDA53A61D18119F00C559B8 /* Info.plist */,
+			);
+			path = CombinationsDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +209,41 @@
 			productReference = CD665A751D101CCF00F33632 /* CombinationsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CDDA538C1D18119F00C559B8 /* CombinationsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDDA53AB1D18119F00C559B8 /* Build configuration list for PBXNativeTarget "CombinationsDemo" */;
+			buildPhases = (
+				CDDA53891D18119F00C559B8 /* Sources */,
+				CDDA538A1D18119F00C559B8 /* Frameworks */,
+				CDDA538B1D18119F00C559B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CombinationsDemo;
+			productName = CombinationsDemo;
+			productReference = CDDA538D1D18119F00C559B8 /* CombinationsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDDA539F1D18119F00C559B8 /* CombinationsDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDDA53AC1D18119F00C559B8 /* Build configuration list for PBXNativeTarget "CombinationsDemoUITests" */;
+			buildPhases = (
+				CDDA539C1D18119F00C559B8 /* Sources */,
+				CDDA539D1D18119F00C559B8 /* Frameworks */,
+				CDDA539E1D18119F00C559B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDDA53A21D18119F00C559B8 /* PBXTargetDependency */,
+			);
+			name = CombinationsDemoUITests;
+			productName = CombinationsDemoUITests;
+			productReference = CDDA53A01D18119F00C559B8 /* CombinationsDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +260,13 @@
 					CD665A741D101CCF00F33632 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					CDDA538C1D18119F00C559B8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CDDA539F1D18119F00C559B8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CDDA538C1D18119F00C559B8;
+					};
 				};
 			};
 			buildConfigurationList = CD665A651D101CCF00F33632 /* Build configuration list for PBXProject "Combinations" */;
@@ -170,6 +275,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CD665A611D101CCF00F33632;
 			productRefGroup = CD665A6C1D101CCF00F33632 /* Products */;
@@ -178,6 +284,8 @@
 			targets = (
 				CD665A6A1D101CCF00F33632 /* Combinations */,
 				CD665A741D101CCF00F33632 /* CombinationsTests */,
+				CDDA538C1D18119F00C559B8 /* CombinationsDemo */,
+				CDDA539F1D18119F00C559B8 /* CombinationsDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +299,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD665A731D101CCF00F33632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDA538B1D18119F00C559B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDDA539A1D18119F00C559B8 /* LaunchScreen.storyboard in Resources */,
+				CDDA53971D18119F00C559B8 /* Assets.xcassets in Resources */,
+				CDDA53951D18119F00C559B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDA539E1D18119F00C559B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,6 +342,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDDA53891D18119F00C559B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDDA53921D18119F00C559B8 /* ViewController.swift in Sources */,
+				CDDA53901D18119F00C559B8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDA539C1D18119F00C559B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDDA53A51D18119F00C559B8 /* CombinationsDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -225,7 +367,31 @@
 			target = CD665A6A1D101CCF00F33632 /* Combinations */;
 			targetProxy = CD665A771D101CCF00F33632 /* PBXContainerItemProxy */;
 		};
+		CDDA53A21D18119F00C559B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDDA538C1D18119F00C559B8 /* CombinationsDemo */;
+			targetProxy = CDDA53A11D18119F00C559B8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDDA53931D18119F00C559B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDDA53941D18119F00C559B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDDA53981D18119F00C559B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDDA53991D18119F00C559B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CD665A7D1D101CCF00F33632 /* Debug */ = {
@@ -384,6 +550,54 @@
 			};
 			name = Release;
 		};
+		CDDA53A71D18119F00C559B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CombinationsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDDA53A81D18119F00C559B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CombinationsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CDDA53A91D18119F00C559B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CombinationsDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CombinationsDemo;
+			};
+			name = Debug;
+		};
+		CDDA53AA1D18119F00C559B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CombinationsDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CombinationsDemo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +627,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CDDA53AB1D18119F00C559B8 /* Build configuration list for PBXNativeTarget "CombinationsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDDA53A71D18119F00C559B8 /* Debug */,
+				CDDA53A81D18119F00C559B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CDDA53AC1D18119F00C559B8 /* Build configuration list for PBXNativeTarget "CombinationsDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDDA53A91D18119F00C559B8 /* Debug */,
+				CDDA53AA1D18119F00C559B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
