@@ -16,20 +16,9 @@ protocol FormViewControllerDataSource: class {
     func formViewController(controller: FormViewController, classForFormRowCellAtIndexPath indexPath: NSIndexPath) -> AnyClass?
 }
 
-
-/// Form editing view controller delegate
-protocol FormViewControllerDelegate: class {
-    
-    func formViewControllerDidCancelEditing(controller: FormViewController)
-    
-    func formViewControllerDidEndEditing(controller: FormViewController) throws
-}
-
-
 /// Form editing view controller
-class FormViewController: UITableViewController, FormViewControllerDataSource, FormViewControllerDelegate {
+class FormViewController: UITableViewController, FormViewControllerDataSource {
     
-    weak var delegate: FormViewControllerDelegate?
     weak var dataSource: FormViewControllerDataSource?
     
     /// Auto enable editing for first row on appear
@@ -43,10 +32,6 @@ class FormViewController: UITableViewController, FormViewControllerDataSource, F
         // Set dynamic rows heigh (cell baces sizing)
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        // Register nib for default cell
-        let defaultCellNib = UINib(nibName: String(FormRowCell), bundle: nil)
-        tableView.registerNib(defaultCellNib, forCellReuseIdentifier: String(FormRowCell))
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -153,17 +138,7 @@ class FormViewController: UITableViewController, FormViewControllerDataSource, F
     }
     
     func formViewController(controller: FormViewController, formRowForIndexPath indexPath: NSIndexPath) -> FormRow {
-        return FormRow() // Provide emtpy row
-    }
-    
-    // MARK: FormViewControllerDelegate
-    
-    func formViewControllerDidCancelEditing(controller: FormViewController) {
-        // Should be implemented in child classes
-    }
-    
-    func formViewControllerDidEndEditing(controller: FormViewController) throws {
-        // Should be implemented in child classes
+        return FormRow() // Provide empty row
     }
 }
 

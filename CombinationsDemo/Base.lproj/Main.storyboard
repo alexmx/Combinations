@@ -14,21 +14,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormRowCell" id="bx5-Pz-xbF" customClass="FormRowCell" customModule="CombinationsDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormRowCell" rowHeight="80" id="7GJ-GC-27a" customClass="FormRowCell" customModule="CombinationsDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bx5-Pz-xbF" id="xDx-Fo-vA1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7GJ-GC-27a" id="b0f-CC-CQb">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr6-dR-yAG">
+                                            <rect key="frame" x="25" y="20" width="550" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Line 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66U-FY-ska" userLabel="Input Text Field">
+                                            <rect key="frame" x="25" y="44" width="550" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="66U-FY-ska" firstAttribute="leading" secondItem="b0f-CC-CQb" secondAttribute="leading" constant="25" id="1qd-ho-Twi"/>
+                                        <constraint firstItem="Mr6-dR-yAG" firstAttribute="top" secondItem="b0f-CC-CQb" secondAttribute="top" constant="20" id="BB3-cS-dcW"/>
+                                        <constraint firstItem="66U-FY-ska" firstAttribute="top" secondItem="Mr6-dR-yAG" secondAttribute="bottom" constant="10" id="Sxx-uG-YNq"/>
+                                        <constraint firstItem="Mr6-dR-yAG" firstAttribute="leading" secondItem="b0f-CC-CQb" secondAttribute="leading" constant="25" id="ZQu-Q3-jDG"/>
+                                        <constraint firstAttribute="trailing" secondItem="66U-FY-ska" secondAttribute="trailing" constant="25" id="dlw-rk-OzM"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mr6-dR-yAG" secondAttribute="trailing" constant="25" id="hZb-5e-aci"/>
+                                        <constraint firstAttribute="bottom" secondItem="66U-FY-ska" secondAttribute="bottom" constant="15" id="zCd-1a-mS2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="textField" destination="66U-FY-ska" id="8N3-HM-XfL"/>
+                                    <outlet property="titleLabel" destination="Mr6-dR-yAG" id="nO0-va-750"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="PqA-h2-7mN" id="d7V-TO-Kmh"/>
-                            <outlet property="delegate" destination="PqA-h2-7mN" id="99K-Pa-gIR"/>
+                            <outlet property="dataSource" destination="PqA-h2-7mN" id="f4x-ZD-QGp"/>
+                            <outlet property="delegate" destination="PqA-h2-7mN" id="wAK-Zg-uhD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Demo" id="L04-HF-zbj"/>
+                    <navigationItem key="navigationItem" title="Demo" id="OlP-wc-HZz">
+                        <barButtonItem key="rightBarButtonItem" title="Validate" id="sIH-Ur-6Lc">
+                            <connections>
+                                <action selector="didPressValidate:" destination="PqA-h2-7mN" id="o5P-8i-5Qi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xf-gb-BWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

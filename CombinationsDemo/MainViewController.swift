@@ -12,14 +12,31 @@ class MainViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        dataSource = self
+        
+        tableView.tableFooterView = UIView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
-
-
+    
+    // MARK: FormViewControllerDataSource
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func formViewController(controller: FormViewController, formRowForIndexPath indexPath: NSIndexPath) -> FormRow {
+        return FormRow(title: "Title", value: "Value")
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func didPressValidate(sender: UIBarButtonItem) {
+        
+      print("Validate")
+    }
 }
 
