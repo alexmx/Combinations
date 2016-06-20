@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CombinationsDemo
 //
 //  Created by Alexandru Maimescu on 6/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
