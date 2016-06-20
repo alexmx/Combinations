@@ -11,9 +11,17 @@ import XCTest
 
 class CombinationTests1: CombinationsSpec {
     
+    override class func inputValuesForCombinations() -> Matrix {
+        
+        return [
+            [1, 2, 3, 4],
+            ["1", "2", "3"]
+        ]
+    }
+    
     override func assertCombination(combination: [AnyObject]) {
         
-        
+        XCTAssertTrue(true)
     }
     
     func testExample() {
@@ -24,12 +32,16 @@ class CombinationTests1: CombinationsSpec {
 
 class CombinationTests2: CombinationsSpec {
     
-    override func assertCombination(combination: [AnyObject]) {
+    override class func inputValuesForCombinations() -> Matrix {
         
+        return [
+            [1, 2],
+            ["hello", "world"]
+        ]
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    override func assertCombination(combination: [AnyObject]) {
+        
+        XCTAssertTrue(true)
     }
 }

@@ -6,24 +6,18 @@
 //  Copyright © 2016 Alexandru Maimescu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import <Combinations/Combinations-Swift.h>
 #import <objc/runtime.h>
 
 #import "CombinationsSpec.h"
-
-@import Foundation;
 
 @interface CombinationsSpec ()
 
 @end
 
 @implementation CombinationsSpec
-
-+ (void)initialize
-{
-    if (self == [CombinationsSpec self]) return;
-}
 
 + (instancetype)testCaseWithSelector:(SEL)selector
 {
@@ -37,18 +31,33 @@
     return nil;
 }
 
++ (Matrix *)inputValuesForCombinations
+{
+    [self raiseOverrideRequired]; // Must be overridden
+    
+    return nil;
+}
+
 + (NSArray<NSInvocation *> *)testInvocations
 {
     if (self == [CombinationsSpec self]) return nil;
     
-    NSInvocation *invocation = [self invocationWithIdentifier:@"mySuperTest"];
+    Matrix *inputValues = [self inputValuesForCombinations];
+    Matrix *combinations = [[CombinationsGenerator new] combinationsForInputValues:inputValues];
     
-    return @[invocation];
+    NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];
+    
+    for (int i = 0; i < combinations.count; i++) {
+        NSString *combinationIdentifier = [NSString stringWithFormat:@"comb_%d", i];
+        [invocations addObject:[self invocationWithIdentifier:combinationIdentifier combination:combinations[i]]];
+    }
+    
+    return invocations;
 }
 
-+ (NSInvocation *)invocationWithIdentifier:(NSString *)identifier
++ (NSInvocation *)invocationWithIdentifier:(NSString *)identifier combination:(NSArray *)combination
 {
-    SEL selector = [self addInstanceMethodForIdentifier:identifier];
+    SEL selector = [self addInstanceMethodForIdentifier:identifier combination:combination];
     
     NSMethodSignature *signature = [self instanceMethodSignatureForSelector:selector];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
@@ -57,11 +66,12 @@
     return invocation;
 }
 
-+ (SEL)addInstanceMethodForIdentifier:(NSString *)identifier
++ (SEL)addInstanceMethodForIdentifier:(NSString *)identifier combination:(NSArray *)combination
 {
-    SEL selector = NSSelectorFromString(identifier);
+    NSString *selectorName = [NSString stringWithFormat:@"%@_%@", NSStringFromClass(self), identifier];
+    SEL selector = NSSelectorFromString(selectorName);
     
-    IMP implementation = imp_implementationWithBlock(^(CombinationsSpec *self, NSArray *combination) {
+    IMP implementation = imp_implementationWithBlock(^(CombinationsSpec *self) {
         [self assertCombination:combination];
     });
     
@@ -71,10 +81,15 @@
     return selector;
 }
 
-- (void)raiseOverrideRequired
++ (void)raiseOverrideRequired
 {
     [NSException raise:@"Fatal Error"
                 format:@"This method must be overridden in subclass!"];
+}
+
+- (void)raiseOverrideRequired
+{
+    [self.class raiseOverrideRequired];
 }
 
 - (void)assertCombination:(NSArray *)combination
