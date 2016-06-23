@@ -48,7 +48,7 @@
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];
     
     for (int i = 0; i < combinations.count; i++) {
-        NSString *combinationIdentifier = [NSString stringWithFormat:@"comb_%d", i];
+        NSString *combinationIdentifier = [NSString stringWithFormat:@"%d", i];
         [invocations addObject:[self invocationWithIdentifier:combinationIdentifier combination:combinations[i]]];
     }
     
@@ -68,7 +68,7 @@
 
 + (SEL)addInstanceMethodForIdentifier:(NSString *)identifier combination:(NSArray *)combination
 {
-    NSString *selectorName = [NSString stringWithFormat:@"%@_%@", NSStringFromClass(self), identifier];
+    NSString *selectorName = [NSString stringWithFormat:@"%@.testComb%@", NSStringFromClass(self), identifier];
     SEL selector = NSSelectorFromString(selectorName);
     
     IMP implementation = imp_implementationWithBlock(^(CombinationsSpec *self) {

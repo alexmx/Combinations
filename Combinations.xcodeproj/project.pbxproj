@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5DE6AE1D1C4434004FE7AF /* Combinations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD665A6B1D101CCF00F33632 /* Combinations.framework */; };
 		CD665A6F1D101CCF00F33632 /* Combinations.h in Headers */ = {isa = PBXBuildFile; fileRef = CD665A6E1D101CCF00F33632 /* Combinations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD665A761D101CCF00F33632 /* Combinations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD665A6B1D101CCF00F33632 /* Combinations.framework */; };
 		CD665A7B1D101CCF00F33632 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD665A7A1D101CCF00F33632 /* CombinationsTests.swift */; };
@@ -23,6 +24,7 @@
 		CDDA53B41D18175100C559B8 /* FormRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B31D18175100C559B8 /* FormRowCell.swift */; };
 		CDDA53B61D18175800C559B8 /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B51D18175800C559B8 /* FormRow.swift */; };
 		CDDA53B91D18192100C559B8 /* FormRowAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */; };
+		CDEAEF781D1C4EA6001F91AA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEAEF771D1C4EA6001F91AA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		CDDA53B31D18175100C559B8 /* FormRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowCell.swift; sourceTree = "<group>"; };
 		CDDA53B51D18175800C559B8 /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowAccessoryView.swift; sourceTree = "<group>"; };
+		CDEAEF771D1C4EA6001F91AA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5DE6AE1D1C4434004FE7AF /* Combinations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +151,8 @@
 		CDDA538E1D18119F00C559B8 /* CombinationsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CDDA53BC1D1839D400C559B8 /* Models */,
+				CDDA53BB1D1839CD00C559B8 /* Views */,
 				CDDA53B11D18150100C559B8 /* Controllers */,
 				CDDA538F1D18119F00C559B8 /* AppDelegate.swift */,
 				CDDA53B21D18151400C559B8 /* Supporting Files */,
@@ -157,6 +163,7 @@
 		CDDA53A31D18119F00C559B8 /* CombinationsDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CDEAEF771D1C4EA6001F91AA /* Utils.swift */,
 				CDDA53A41D18119F00C559B8 /* CombinationsDemoUITests.swift */,
 				CDDA53A61D18119F00C559B8 /* Info.plist */,
 			);
@@ -167,10 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				CDDA53AF1D18146D00C559B8 /* FormViewController.swift */,
-				CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */,
 				CDDA53911D18119F00C559B8 /* MainViewController.swift */,
-				CDDA53B31D18175100C559B8 /* FormRowCell.swift */,
-				CDDA53B51D18175800C559B8 /* FormRow.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +188,23 @@
 				CDDA539B1D18119F00C559B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDDA53BB1D1839CD00C559B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA53B31D18175100C559B8 /* FormRowCell.swift */,
+				CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CDDA53BC1D1839D400C559B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA53B51D18175800C559B8 /* FormRow.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDA53A51D18119F00C559B8 /* CombinationsDemoUITests.swift in Sources */,
+				CDEAEF781D1C4EA6001F91AA /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +689,7 @@
 				CDDA53A81D18119F00C559B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDDA53AC1D18119F00C559B8 /* Build configuration list for PBXNativeTarget "CombinationsDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -675,6 +698,7 @@
 				CDDA53AA1D18119F00C559B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

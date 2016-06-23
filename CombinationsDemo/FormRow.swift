@@ -70,6 +70,7 @@ class FormRow {
         
         self.init(title: title, value: nil)
         
+        self.rowType = .MultipleChoice
         self.values = values
         self.value = values[selectedValueIndex]
     }

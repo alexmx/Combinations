@@ -12,7 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="14Z-qz-g5W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormRowCell" rowHeight="80" id="7GJ-GC-27a" customClass="FormRowCell" customModule="CombinationsDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
@@ -56,7 +56,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Demo" id="OlP-wc-HZz">
-                        <barButtonItem key="rightBarButtonItem" title="Validate" id="sIH-Ur-6Lc">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="sIH-Ur-6Lc">
                             <connections>
                                 <action selector="didPressValidate:" destination="PqA-h2-7mN" id="o5P-8i-5Qi"/>
                             </connections>

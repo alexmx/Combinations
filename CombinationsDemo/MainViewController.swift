@@ -10,14 +10,35 @@ import UIKit
 
 class MainViewController: FormViewController {
 
+    var rows: [FormRow]?
+    
+    var firstNameRow: FormRow!,
+        emailRow: FormRow!,
+        passwordRow: FormRow!,
+        genderRow: FormRow!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
         
         tableView.tableFooterView = UIView()
+        
+        loadData()
     }
 
+    func loadData() {
+        
+        firstNameRow = FormRow(title: "First Name", value: nil)
+        emailRow = FormRow(title: "Email", value: nil)
+        emailRow.rowType = .Email
+        passwordRow = FormRow(title: "Password", value: nil)
+        passwordRow.rowType = .Passcode
+        genderRow = FormRow(title: "Gender", values: ["Male", "Female"])
+        
+        rows = [firstNameRow, emailRow, passwordRow, genderRow]
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -25,18 +46,18 @@ class MainViewController: FormViewController {
     // MARK: FormViewControllerDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return rows?.count ?? 0
     }
     
     override func formViewController(controller: FormViewController, formRowForIndexPath indexPath: NSIndexPath) -> FormRow {
-        return FormRow(title: "Title", value: "Value")
+        return rows![indexPath.row]
     }
     
     // MARK: Actions
     
     @IBAction func didPressValidate(sender: UIBarButtonItem) {
-        
-      print("Validate")
+    
+        print("Validate")
     }
 }
 

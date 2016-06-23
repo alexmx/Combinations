@@ -43,7 +43,6 @@ class FormRowCell: UITableViewCell {
                 switch formRow.rowType {
                 case .Passcode:
                     textField.secureTextEntry = true
-                    textField.keyboardType = .NumberPad
                 case .MultipleChoice:
                     textField.inputView = optionsView
                     textField.text = formRow.values?[defaultMultipleChoiceIndex]
