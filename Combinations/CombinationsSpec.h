@@ -22,7 +22,7 @@ typedef NSArray<NSArray *> Matrix;
  *
  *  @return A matrix of input values.
  */
-+ (nullable Matrix *)inputValuesForCombinations;
++ (nullable Matrix *)valuesForCombinations;
 
 /**
  *  Assert the generated combination of values.

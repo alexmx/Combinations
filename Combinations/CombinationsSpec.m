@@ -19,6 +19,13 @@
 
 @implementation CombinationsSpec
 
++ (Matrix *)valuesForCombinations
+{
+    [self raiseOverrideRequired]; // Must be overridden
+    
+    return nil;
+}
+
 + (instancetype)testCaseWithSelector:(SEL)selector
 {
     NSArray<NSInvocation *> *invocations = [self testInvocations];
@@ -31,18 +38,11 @@
     return nil;
 }
 
-+ (Matrix *)inputValuesForCombinations
-{
-    [self raiseOverrideRequired]; // Must be overridden
-    
-    return nil;
-}
-
 + (NSArray<NSInvocation *> *)testInvocations
 {
     if (self == [CombinationsSpec self]) return nil;
     
-    Matrix *inputValues = [self inputValuesForCombinations];
+    Matrix *inputValues = [self valuesForCombinations];
     Matrix *combinations = [[CombinationsGenerator new] combinationsForInputValues:inputValues];
     
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];

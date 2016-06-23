@@ -15,12 +15,8 @@ class CombinationsDemoUITests: CombinationsSpec {
         
         XCUIApplication().launch()
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    override class func inputValuesForCombinations() -> Matrix {
+        
+    override class func valuesForCombinations() -> Matrix {
         
         return [
             ["John Smith", ""],
@@ -32,10 +28,12 @@ class CombinationsDemoUITests: CombinationsSpec {
     
     override func assertCombination(combination: [AnyObject]) {
         
-        if let firstName = combination[0] as? String,
-            let email = combination[1] as? String,
-            let password = combination[2] as? String,
-            let gender = combination[3] as? String {
+        if let combination = combination as? [String] {
+            
+            let firstName = combination[0]
+            let email = combination[1]
+            let password = combination[2]
+            let gender = combination[3]
             
             let app = XCUIApplication()
             let tablesQuery = app.tables
@@ -51,6 +49,9 @@ class CombinationsDemoUITests: CombinationsSpec {
             iconArrowRightButton.tap()
             app.pickerWheels.element.adjustToPickerWheelValue(gender)
             app.navigationBars["Demo"].buttons["Submit"].tap()
+            
+            // Perform required asserts
+            
         } else {
             XCTFail()
         }
