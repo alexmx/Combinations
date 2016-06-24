@@ -14,6 +14,8 @@ class CombinationTests1: CombinationsSpec {
     override class func valuesForCombinations() -> Matrix {
         return [
             [1, 2, 3, 4],
+            ["1", "2", "3"],
+            [1, 2, 3, 4],
             ["1", "2", "3"]
         ]
     }
