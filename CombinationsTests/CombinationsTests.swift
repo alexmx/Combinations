@@ -41,7 +41,11 @@ class CombinationTests2: CombinationsSpec {
     
     override func assertCombination(combination: [AnyObject]) {
         
-        print(combination)
+        if let number = combination[0] as? Int,
+            let string = combination[1] as? String {
+            
+            print("\(number) \(string)")
+        }
         
         // Perform required asserts on combination
         

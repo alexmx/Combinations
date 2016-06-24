@@ -34,12 +34,12 @@ public final class CombinationsGenerator: NSObject {
     /**
      Generate combinations for provided input values.
      
-     - parameter inputValues: The input values used to generate combinations.
+     - parameter values: The input values used to generate combinations.
      
      - returns: A matrix of generated combinations.
      */
-    public func combinations(forInputValues inputValues: Matrix) -> Matrix {
-        return cartesianProduct(inputValues)
+    public func combinations(forValues values: Matrix) -> Matrix {
+        return cartesianProduct(values)
     }
     
     /**
@@ -48,7 +48,19 @@ public final class CombinationsGenerator: NSObject {
      - parameter inputValues: The input values used to generate combinations.
      - parameter assertCombination: The closure which will be invoked for every generated combination.
      */
-    public func combinations(forInputValues inputValues: Matrix, assertCombination: ([AnyObject]) -> Void) {
-        
+    public func combinations(forValues values: Matrix, assertCombination: ([AnyObject]) -> Void) {
+        combinations(forValues: values).forEach { (combination) in
+            assertCombination(combination)
+        }
+    }
+    
+    /**
+     Generate combinations for provided input values.
+     
+     - parameter values: The input values used to generate combinations.
+     - parameter assertCombination: The closure which will be invoked for every generated combination.
+     */
+    public static func combinations(forValues values: Matrix, assertCombination: ([AnyObject]) -> Void) {
+        CombinationsGenerator().combinations(forValues: values, assertCombination: assertCombination)
     }
 }

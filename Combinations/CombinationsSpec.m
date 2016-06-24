@@ -43,7 +43,7 @@
     if (self == [CombinationsSpec self]) return nil;
     
     Matrix *inputValues = [self valuesForCombinations];
-    Matrix *combinations = [[CombinationsGenerator new] combinationsForInputValues:inputValues];
+    Matrix *combinations = [[CombinationsGenerator new] combinationsForValues:inputValues];
     
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];
     

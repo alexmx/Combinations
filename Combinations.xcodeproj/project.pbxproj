@@ -24,6 +24,9 @@
 		CDDA53B41D18175100C559B8 /* FormRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B31D18175100C559B8 /* FormRowCell.swift */; };
 		CDDA53B61D18175800C559B8 /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B51D18175800C559B8 /* FormRow.swift */; };
 		CDDA53B91D18192100C559B8 /* FormRowAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */; };
+		CDE7DE1A1D1D83700027AA43 /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBF87741D1D76FF00EF9757 /* Kiwi.framework */; };
+		CDE7DE1C1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE7DE1B1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m */; };
+		CDE7DE201D1D84E20027AA43 /* Kiwi.framework in Copy Dependencies */ = {isa = PBXBuildFile; fileRef = CDBF87741D1D76FF00EF9757 /* Kiwi.framework */; };
 		CDEAEF781D1C4EA6001F91AA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEAEF771D1C4EA6001F91AA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CDE7DE1F1D1D84B00027AA43 /* Copy Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				CDE7DE201D1D84E20027AA43 /* Kiwi.framework in Copy Dependencies */,
+			);
+			name = "Copy Dependencies";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CD665A6B1D101CCF00F33632 /* Combinations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Combinations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD665A6E1D101CCF00F33632 /* Combinations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Combinations.h; sourceTree = "<group>"; };
@@ -54,6 +71,7 @@
 		CD665A851D101D8600F33632 /* CombinationsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationsGenerator.swift; sourceTree = "<group>"; };
 		CD665A871D101E8500F33632 /* CombinationsSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinationsSpec.h; sourceTree = "<group>"; };
 		CD665A881D101E8500F33632 /* CombinationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinationsSpec.m; sourceTree = "<group>"; };
+		CDBF87741D1D76FF00EF9757 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
 		CDDA538D1D18119F00C559B8 /* CombinationsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombinationsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDA538F1D18119F00C559B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDDA53911D18119F00C559B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +86,7 @@
 		CDDA53B31D18175100C559B8 /* FormRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowCell.swift; sourceTree = "<group>"; };
 		CDDA53B51D18175800C559B8 /* FormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowAccessoryView.swift; sourceTree = "<group>"; };
+		CDE7DE1B1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinationsTestsWithKiwi.m; sourceTree = "<group>"; };
 		CDEAEF771D1C4EA6001F91AA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE7DE1A1D1D83700027AA43 /* Kiwi.framework in Frameworks */,
 				CD665A761D101CCF00F33632 /* Combinations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,9 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				CD665A6D1D101CCF00F33632 /* Combinations */,
-				CD665A791D101CCF00F33632 /* CombinationsTests */,
 				CDDA538E1D18119F00C559B8 /* CombinationsDemo */,
+				CD665A791D101CCF00F33632 /* CombinationsTests */,
 				CDDA53A31D18119F00C559B8 /* CombinationsDemoUITests */,
+				CDBF87761D1D770B00EF9757 /* Supporting Files */,
 				CD665A6C1D101CCF00F33632 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,9 +164,18 @@
 			isa = PBXGroup;
 			children = (
 				CD665A7A1D101CCF00F33632 /* CombinationsTests.swift */,
+				CDE7DE1B1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m */,
 				CD665A7C1D101CCF00F33632 /* Info.plist */,
 			);
 			path = CombinationsTests;
+			sourceTree = "<group>";
+		};
+		CDBF87761D1D770B00EF9757 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDBF87741D1D76FF00EF9757 /* Kiwi.framework */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CDDA538E1D18119F00C559B8 /* CombinationsDemo */ = {
@@ -230,6 +260,7 @@
 				CD665A671D101CCF00F33632 /* Frameworks */,
 				CD665A681D101CCF00F33632 /* Headers */,
 				CD665A691D101CCF00F33632 /* Resources */,
+				CDE7DE1F1D1D84B00027AA43 /* Copy Dependencies */,
 			);
 			buildRules = (
 			);
@@ -388,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD665A7B1D101CCF00F33632 /* CombinationsTests.swift in Sources */,
+				CDE7DE1C1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +574,7 @@
 		CD665A801D101CCF00F33632 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -564,6 +597,7 @@
 		CD665A811D101CCF00F33632 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -585,18 +619,29 @@
 		CD665A831D101CCF00F33632 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CombinationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CD665A841D101CCF00F33632 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CombinationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexmx.CombinationsTests;
