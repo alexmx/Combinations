@@ -14,6 +14,7 @@
 		CD665A861D101D8600F33632 /* CombinationsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD665A851D101D8600F33632 /* CombinationsGenerator.swift */; };
 		CD665A891D101E8500F33632 /* CombinationsSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = CD665A871D101E8500F33632 /* CombinationsSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD665A8A1D101E8500F33632 /* CombinationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CD665A881D101E8500F33632 /* CombinationsSpec.m */; };
+		CD9C6FD51D21371B00D207EF /* Kiwi.framework in Copy Dependencies */ = {isa = PBXBuildFile; fileRef = CDBF87741D1D76FF00EF9757 /* Kiwi.framework */; };
 		CDDA53901D18119F00C559B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA538F1D18119F00C559B8 /* AppDelegate.swift */; };
 		CDDA53921D18119F00C559B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53911D18119F00C559B8 /* MainViewController.swift */; };
 		CDDA53951D18119F00C559B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDA53931D18119F00C559B8 /* Main.storyboard */; };
@@ -26,7 +27,6 @@
 		CDDA53B91D18192100C559B8 /* FormRowAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA53B81D18192100C559B8 /* FormRowAccessoryView.swift */; };
 		CDE7DE1A1D1D83700027AA43 /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBF87741D1D76FF00EF9757 /* Kiwi.framework */; };
 		CDE7DE1C1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE7DE1B1D1D83B20027AA43 /* CombinationsTestsWithKiwi.m */; };
-		CDE7DE201D1D84E20027AA43 /* Kiwi.framework in Copy Dependencies */ = {isa = PBXBuildFile; fileRef = CDBF87741D1D76FF00EF9757 /* Kiwi.framework */; };
 		CDEAEF781D1C4EA6001F91AA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEAEF771D1C4EA6001F91AA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,13 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CDE7DE1F1D1D84B00027AA43 /* Copy Dependencies */ = {
+		CD9C6FD41D21370600D207EF /* Copy Dependencies */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				CDE7DE201D1D84E20027AA43 /* Kiwi.framework in Copy Dependencies */,
+				CD9C6FD51D21371B00D207EF /* Kiwi.framework in Copy Dependencies */,
 			);
 			name = "Copy Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +260,6 @@
 				CD665A671D101CCF00F33632 /* Frameworks */,
 				CD665A681D101CCF00F33632 /* Headers */,
 				CD665A691D101CCF00F33632 /* Resources */,
-				CDE7DE1F1D1D84B00027AA43 /* Copy Dependencies */,
 			);
 			buildRules = (
 			);
@@ -278,6 +277,7 @@
 				CD665A711D101CCF00F33632 /* Sources */,
 				CD665A721D101CCF00F33632 /* Frameworks */,
 				CD665A731D101CCF00F33632 /* Resources */,
+				CD9C6FD41D21370600D207EF /* Copy Dependencies */,
 			);
 			buildRules = (
 			);
