@@ -43,6 +43,24 @@ If you are using **Carthage**, you can always use it to build the library within
 github "alexmx/Combinations"
 ```
 
+#### CocoaPods
+
+If you are using **CocoaPods**, you can as well use it to integrate the library by adding the following lines to your `Podfile`.
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+target 'YourAppTarget' do
+    pod "Combinations", :git => 'git@github.com:alexmx/Combinations.git'
+end
+
+```
+
+#### Manual installation
+
+In order to include the **Combinations** library into your project, you need to build a dynamic framework from provided source code and include it into your project, or inlcude the entire **Combinations** library as sub-project by copying it to your project directory or include as Git submodule.
+
 ## Usage
 
 The library requires just two methods to be overriden: `valuesForCombinations` and `assertCombination:`
