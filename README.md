@@ -18,7 +18,7 @@ We also have our testing boundary values defined for each field:
 * Password: `12345`, `~@#123ABC`, `empty string`
 * Gender: `Male`, `Female`
 
-**Combinations** gets a set of input test data values and transforms it in run-time tests for each generated combination of values.
+**Combinations** gets a set of input test data values and transforms it in **run-time tests for each generated combination of values**.
 
 So for our example the combinations will be: 
 * [`John Smith`, `john.smith@example.com`, `12345`, `Male`]
