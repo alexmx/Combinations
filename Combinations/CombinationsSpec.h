@@ -25,6 +25,15 @@ typedef NSArray<NSArray *> Matrix;
 + (nullable Matrix *)valuesForCombinations;
 
 /**
+ *  Filter combinations for which we should skip the test generation.
+ *
+ *  @param combination The combination to be checked.
+ *
+ *  @return YES if you need to skip the given combination. Default implementation returns NO.
+ */
++ (BOOL)skipTestForCombination:(nonnull NSArray *)combination;
+
+/**
  *  Assert the generated combination of values.
  *
  *  @discussion This method will be called for each generated combination and a new test will be added in run-time.

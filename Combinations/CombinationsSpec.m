@@ -48,8 +48,10 @@
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];
     
     for (int i = 0; i < combinations.count; i++) {
-        NSString *combinationIdentifier = [NSString stringWithFormat:@"%d", i];
-        [invocations addObject:[self invocationWithIdentifier:combinationIdentifier combination:combinations[i]]];
+        if (![self skipTestForCombination:combinations[i]]) {
+            NSString *combinationIdentifier = [NSString stringWithFormat:@"%d", i];
+            [invocations addObject:[self invocationWithIdentifier:combinationIdentifier combination:combinations[i]]];
+        }
     }
     
     return invocations;
@@ -75,7 +77,7 @@
         [self assertCombination:combination];
     });
     
-    NSString *typeString = [NSString stringWithFormat:@"%s%s%s",  @encode(id), @encode(id), @encode(SEL)];
+    NSString *typeString = [NSString stringWithFormat:@"%s%s%s", @encode(id), @encode(id), @encode(SEL)];
     class_addMethod(self, selector, implementation, typeString.UTF8String);
     
     return selector;
@@ -90,6 +92,11 @@
 - (void)raiseOverrideRequired
 {
     [self.class raiseOverrideRequired];
+}
+
++ (BOOL)skipTestForCombination:(NSArray *)combination
+{
+    return NO;
 }
 
 - (void)assertCombination:(NSArray *)combination
