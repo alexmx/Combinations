@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "Combinations"
-  s.version       = "0.1"
+  s.version       = "0.2"
   s.summary       = "Combinations is an iOS testing utility framework suited for fast boundary testing."
 
   s.description   = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.platform              = :ios
   s.ios.deployment_target = '8.0'
 
-  s.source                = { :git => "https://github.com/alexmx/Combinations.git", :tag => "v0.1" }
+  s.source                = { :git => "https://github.com/alexmx/Combinations.git", :tag => "v#{s.version}" }
   s.source_files          = "Combinations/**/*.{h,m,swift}"
 
   s.libraries             = 'xml2', 'z'
