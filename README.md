@@ -3,9 +3,16 @@
 [![Twitter: @amaimescu](https://img.shields.io/badge/contact-%40amaimescu-blue.svg)](https://twitter.com/amaimescu)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/alexmx/ios-ui-automation-overview/blob/master/LICENSE)
 
-**Combinations** is an iOS testing utility framework suited for fast **boundary testing**.
+**Combinations** is an iOS testing utility framework suited for fast **boundary testing**. 
 
 > **Boundary testing** or **boundary value analysis**, is where test cases are generated using the extremes of the input domain, e.g. maximum, minimum, just inside/outside boundaries, typical values, and error values. It is similar to Equivalence Partitioning but focuses on "corner cases".
+
+The framework does just two simple things:
+
+1. Generate a set of combinations from test data input set;
+2. Generate a run-time unit or UI test for each of the combinations;
+
+![Combinations](/assets/tests.png)
 
 #### Simple example:
 We have an input form with four fields: `First Name`, `Email`, `Password` and `Gender`.
