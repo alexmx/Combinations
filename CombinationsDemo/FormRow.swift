@@ -13,24 +13,24 @@ protocol Validatable {
     func validate() throws
 }
 
-enum FormRowValidationError: ErrorType {
+enum FormRowValidationError: Error {
     
-    case MandatoryField(fieldName: String)
-    case IncorrectFormat(fieldName: String)
+    case mandatoryField(fieldName: String)
+    case incorrectFormat(fieldName: String)
 }
 
 enum FormRowValueType: UInt {
     
-    case GenericAlphanumeric
-    case GenericNumeric
-    case Email
-    case Passcode
-    case MultipleChoice
+    case genericAlphanumeric
+    case genericNumeric
+    case email
+    case passcode
+    case multipleChoice
 }
 
 class FormRow {
     
-    var rowType: FormRowValueType = .GenericAlphanumeric
+    var rowType: FormRowValueType = .genericAlphanumeric
     
     var title: String?
     var placeholder: String?
@@ -70,7 +70,7 @@ class FormRow {
         
         self.init(title: title, value: nil)
         
-        self.rowType = .MultipleChoice
+        self.rowType = .multipleChoice
         self.values = values
         self.value = values[selectedValueIndex]
     }
@@ -84,8 +84,8 @@ extension FormRow: Validatable {
             return
         }
         
-        guard let value = value where !value.isEmpty else {
-            throw FormRowValidationError.MandatoryField(fieldName: title ?? "unknown")
+        guard let value = value , !value.isEmpty else {
+            throw FormRowValidationError.mandatoryField(fieldName: title ?? "unknown")
         }
     }
 }

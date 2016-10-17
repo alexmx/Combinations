@@ -10,9 +10,9 @@ import UIKit
 
 protocol FormRowAccessoryViewDelegate: UIToolbarDelegate {
     
-    func formRowAccessoryViewDidPressPreviousButton(accessoryView: FormRowAccessoryView)
-    func formRowAccessoryViewDidPressNextButton(accessoryView: FormRowAccessoryView)
-    func formRowAccessoryViewDidPressDoneButton(accessoryView: FormRowAccessoryView)
+    func formRowAccessoryViewDidPressPreviousButton(_ accessoryView: FormRowAccessoryView)
+    func formRowAccessoryViewDidPressNextButton(_ accessoryView: FormRowAccessoryView)
+    func formRowAccessoryViewDidPressDoneButton(_ accessoryView: FormRowAccessoryView)
 }
 
 
@@ -32,29 +32,29 @@ class FormRowAccessoryView: UIToolbar {
         setup()
     }
     
-    private func setup() {
+    fileprivate func setup() {
         
-        barStyle = .Default
-        translucent = true
+        barStyle = .default
+        isTranslucent = true
         
-        let previousItem = UIBarButtonItem(image: UIImage(named: "icon-arrow-left"), style: .Plain, target: self, action: #selector(FormRowAccessoryView.previousDidPress(_:)))
-        let nextItem = UIBarButtonItem(image: UIImage(named: "icon-arrow-right"), style: .Plain, target: self, action: #selector(FormRowAccessoryView.nextDidPress(_:)))
-        let doneItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(FormRowAccessoryView.doneDidPress(_:)))
-        let flexibleItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let previousItem = UIBarButtonItem(image: UIImage(named: "icon-arrow-left"), style: .plain, target: self, action: #selector(FormRowAccessoryView.previousDidPress(_:)))
+        let nextItem = UIBarButtonItem(image: UIImage(named: "icon-arrow-right"), style: .plain, target: self, action: #selector(FormRowAccessoryView.nextDidPress(_:)))
+        let doneItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(FormRowAccessoryView.doneDidPress(_:)))
+        let flexibleItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         items = [previousItem, nextItem, flexibleItem, doneItem]
-        tintColor = UIColor.darkGrayColor()
+        tintColor = UIColor.darkGray
     }
     
-    func previousDidPress(item: UIBarButtonItem) {
+    func previousDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressPreviousButton(self)
     }
     
-    func nextDidPress(item: UIBarButtonItem) {
+    func nextDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressNextButton(self)
     }
     
-    func doneDidPress(item: UIBarButtonItem) {
+    func doneDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressDoneButton(self)
     }
 }

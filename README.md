@@ -12,6 +12,8 @@ The framework does just two simple things:
 1. Generate a set of combinations from test data input set;
 2. Generate a run-time unit or UI test for each of the combinations;
 
+Check out the [API reference](http://alexmx.github.io/Combinations/) for more information.
+
 #### Simple example:
 We have an input form with four fields: `First Name`, `Email`, `Password` and `Gender`.
 

@@ -13,7 +13,7 @@ public typealias Matrix = Array<Array<AnyObject>>
 @objc
 public final class CombinationsGenerator: NSObject {
     
-    func cartesianProduct(matrix: Matrix) -> Matrix {
+    func cartesianProduct(forMatrix matrix: Matrix) -> Matrix {
         
         let productSize = matrix.reduce(1) { $0 * $1.count }
         
@@ -21,11 +21,11 @@ public final class CombinationsGenerator: NSObject {
         for i in 0..<productSize {
             var cross = [AnyObject]()
             var n = i
-            for row in matrix.reverse() {
+            for row in matrix.reversed() {
                 cross.append(row[n % row.count])
                 n /= row.count
             }
-            product.append(cross.reverse())
+            product.append(cross.reversed())
         }
         
         return product
@@ -39,7 +39,7 @@ public final class CombinationsGenerator: NSObject {
      - returns: A matrix of generated combinations.
      */
     public func combinations(forValues values: Matrix) -> Matrix {
-        return cartesianProduct(values)
+        return cartesianProduct(forMatrix: values)
     }
     
     /**
