@@ -34,7 +34,6 @@ class CombinationTests1: CombinationsSpec {
     }
 }
 
-
 class CombinationTests2: CombinationsSpec {
     
     override class func valuesForCombinations() -> [[Any]]? {

@@ -142,7 +142,6 @@ class FormViewController: UITableViewController, FormViewControllerDataSource {
     }
 }
 
-
 extension FormViewController: FormRowCellInputAccessoryDelegate {
     
     // MARK: FormRowCellInputAccessoryDelegate

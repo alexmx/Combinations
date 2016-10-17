@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias Matrix = Array<Array<AnyObject>>
+public typealias Matrix = [[AnyObject]]
 
 @objc
 public final class CombinationsGenerator: NSObject {
@@ -45,7 +45,7 @@ public final class CombinationsGenerator: NSObject {
     /**
      Generate combinations for provided input values.
      
-     - parameter inputValues: The input values used to generate combinations.
+     - parameter values: The input values used to generate combinations.
      - parameter assertCombination: The closure which will be invoked for every generated combination.
      */
     public func combinations(forValues values: Matrix, assertCombination: ([AnyObject]) -> Void) {

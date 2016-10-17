@@ -59,7 +59,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'YourAppTarget' do
-    pod "Combinations", :git => 'git@github.com:alexmx/Combinations.git'
+    pod "Combinations"
 end
 
 ```
@@ -83,7 +83,7 @@ class MyTests: CombinationsSpec {
     }
     
     // Provide input values for Combinations
-    override class func valuesForCombinations() -> Matrix {
+    override class func valuesForCombinations() -> [[Any]]? {
         return [
             [1, 2, 3, 4],
             ["John Smith", "John", ""]
@@ -92,7 +92,7 @@ class MyTests: CombinationsSpec {
     
     // This method will be called for each generated combination:
     // [1, "John Smith"], [1, "John"], [1, ""], [2, "John Smith"], etc.
-    override func assertCombination(combination: [AnyObject]) {
+    override func assertCombination(_ combination: [Any]) {
         
         // Perform required asserts on combination
     }

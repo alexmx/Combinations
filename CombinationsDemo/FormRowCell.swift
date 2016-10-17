@@ -8,33 +8,12 @@
 
 import UIKit
 
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
 protocol FormRowCellInputAccessoryDelegate: class {
     
     func formRowCellDidPressPreviousButton(_ cell: FormRowCell)
     func formRowCellDidPressNextButton(_ cell: FormRowCell)
     func formRowCellDidPressDoneButton(_ cell: FormRowCell)
 }
-
 
 class FormRowCell: UITableViewCell {
     
@@ -99,7 +78,7 @@ class FormRowCell: UITableViewCell {
         }
         
         var selectedRow = 0
-        if (formRow.values?.count > formRow.selectedValueIndex) && (formRow.selectedValueIndex > 0) {
+        if ((formRow.values?.count)! > formRow.selectedValueIndex) && (formRow.selectedValueIndex > 0) {
             selectedRow = formRow.selectedValueIndex
         }
         

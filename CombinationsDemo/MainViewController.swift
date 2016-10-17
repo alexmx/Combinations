@@ -39,7 +39,7 @@ class MainViewController: FormViewController {
         rows = [firstNameRow, emailRow, passwordRow, genderRow]
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     

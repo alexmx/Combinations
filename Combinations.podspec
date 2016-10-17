@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "Combinations"
-  s.version       = "0.2"
+  s.version       = "0.3"
   s.summary       = "Combinations is an iOS testing utility framework suited for fast boundary testing."
 
   s.description   = <<-DESC

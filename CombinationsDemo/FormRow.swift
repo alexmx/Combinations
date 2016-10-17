@@ -38,7 +38,7 @@ class FormRow {
     
     var maximumLength: UInt = 0
     
-    var values: Array<String>? {
+    var values: [String]? {
         
         didSet {
             value = values?[selectedValueIndex]
@@ -57,7 +57,6 @@ class FormRow {
     
     var tag: UInt?
     
-    
     convenience init(title: String?, value: String?) {
         
         self.init()
@@ -66,7 +65,7 @@ class FormRow {
         self.value = value
     }
     
-    convenience init(title: String?, values: Array<String>) {
+    convenience init(title: String?, values: [String]) {
         
         self.init(title: title, value: nil)
         
@@ -84,7 +83,7 @@ extension FormRow: Validatable {
             return
         }
         
-        guard let value = value , !value.isEmpty else {
+        guard let value = value, !value.isEmpty else {
             throw FormRowValidationError.mandatoryField(fieldName: title ?? "unknown")
         }
     }

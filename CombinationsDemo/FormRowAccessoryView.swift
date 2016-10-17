@@ -15,7 +15,6 @@ protocol FormRowAccessoryViewDelegate: UIToolbarDelegate {
     func formRowAccessoryViewDidPressDoneButton(_ accessoryView: FormRowAccessoryView)
 }
 
-
 class FormRowAccessoryView: UIToolbar {
     
     weak var inputDelegate: FormRowAccessoryViewDelegate?
