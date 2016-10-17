@@ -15,8 +15,8 @@ class CombinationsDemoUITests: CombinationsSpec {
         
         XCUIApplication().launch()
     }
-        
-    override class func valuesForCombinations() -> Matrix {
+    
+    override class func valuesForCombinations() -> [[Any]]? {
         
         return [
             ["John Smith", ""],
@@ -26,8 +26,8 @@ class CombinationsDemoUITests: CombinationsSpec {
         ]
     }
     
-    override func assertCombination(combination: [AnyObject]) {
-        
+    override func assertCombination(_ combination: [Any]) {
+    
         if let combination = combination as? [String] {
             
             let firstName = combination[0]
@@ -37,17 +37,17 @@ class CombinationsDemoUITests: CombinationsSpec {
             
             let app = XCUIApplication()
             let tablesQuery = app.tables
-            let firstNameCellsQuery = tablesQuery.cells.containingType(.StaticText, identifier:"First Name")
-            tapElementAndWaitForKeyboardToAppear(firstNameCellsQuery.childrenMatchingType(.TextField).element)
-            firstNameCellsQuery.childrenMatchingType(.TextField).element.typeText(firstName)
+            let firstNameCellsQuery = tablesQuery.cells.containing(.staticText, identifier:"First Name")
+            tapElementAndWaitForKeyboardToAppear(firstNameCellsQuery.children(matching: .textField).element)
+            firstNameCellsQuery.children(matching: .textField).element.typeText(firstName)
             let toolbarsQuery = app.toolbars
             let iconArrowRightButton = toolbarsQuery.buttons["icon arrow right"]
             iconArrowRightButton.tap()
-            tablesQuery.cells.containingType(.StaticText, identifier:"Email").childrenMatchingType(.TextField).element.typeText(email)
+            tablesQuery.cells.containing(.staticText, identifier:"Email").children(matching: .textField).element.typeText(email)
             iconArrowRightButton.tap()
-            tablesQuery.cells.containingType(.StaticText, identifier:"Password").childrenMatchingType(.SecureTextField).element.typeText(password)
+            tablesQuery.cells.containing(.staticText, identifier:"Password").children(matching: .secureTextField).element.typeText(password)
             iconArrowRightButton.tap()
-            app.pickerWheels.element.adjustToPickerWheelValue(gender)
+            app.pickerWheels.element.adjust(toPickerWheelValue: gender)
             app.navigationBars["Demo"].buttons["Submit"].tap()
             
             // Perform required asserts

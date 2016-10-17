@@ -8,8 +8,6 @@
 
 #import <XCTest/XCTest.h>
 
-typedef NSArray<NSArray *> Matrix;
-
 /**
  *  The base class for generated combinations tests.
  */
@@ -22,7 +20,7 @@ typedef NSArray<NSArray *> Matrix;
  *
  *  @return A matrix of input values.
  */
-+ (nullable Matrix *)valuesForCombinations;
++ (nullable NSArray<NSArray *> *)valuesForCombinations;
 
 /**
  *  Filter combinations for which we should skip the test generation.

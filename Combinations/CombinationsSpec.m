@@ -19,7 +19,7 @@
 
 @implementation CombinationsSpec
 
-+ (Matrix *)valuesForCombinations
++ (NSArray<NSArray *> *)valuesForCombinations
 {
     [self raiseOverrideRequired]; // Must be overridden
     
@@ -42,8 +42,8 @@
 {
     if (self == [CombinationsSpec self]) return nil;
     
-    Matrix *inputValues = [self valuesForCombinations];
-    Matrix *combinations = [[CombinationsGenerator new] combinationsForValues:inputValues];
+    NSArray *inputValues = [self valuesForCombinations];
+    NSArray *combinations = [[CombinationsGenerator new] combinationsForValues:inputValues];
     
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:combinations.count];
     

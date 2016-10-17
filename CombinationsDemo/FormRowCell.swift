@@ -8,12 +8,31 @@
 
 import UIKit
 
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
 
 protocol FormRowCellInputAccessoryDelegate: class {
     
-    func formRowCellDidPressPreviousButton(cell: FormRowCell)
-    func formRowCellDidPressNextButton(cell: FormRowCell)
-    func formRowCellDidPressDoneButton(cell: FormRowCell)
+    func formRowCellDidPressPreviousButton(_ cell: FormRowCell)
+    func formRowCellDidPressNextButton(_ cell: FormRowCell)
+    func formRowCellDidPressDoneButton(_ cell: FormRowCell)
 }
 
 
@@ -41,16 +60,16 @@ class FormRowCell: UITableViewCell {
                 textField.inputView = nil
                 
                 switch formRow.rowType {
-                case .Passcode:
-                    textField.secureTextEntry = true
-                case .MultipleChoice:
+                case .passcode:
+                    textField.isSecureTextEntry = true
+                case .multipleChoice:
                     textField.inputView = optionsView
                     textField.text = formRow.values?[defaultMultipleChoiceIndex]
-                case .Email:
-                    textField.autocapitalizationType = .None
-                    textField.keyboardType = .EmailAddress
+                case .email:
+                    textField.autocapitalizationType = .none
+                    textField.keyboardType = .emailAddress
                 default:
-                    textField.keyboardType = .Default
+                    textField.keyboardType = .default
                 }
             }
         }
@@ -59,11 +78,11 @@ class FormRowCell: UITableViewCell {
     var editable: Bool = true {
         
         didSet {
-            textField?.enabled = editable
+            textField?.isEnabled = editable
         }
     }
     
-    private var optionsView: UIPickerView {
+    fileprivate var optionsView: UIPickerView {
         
         let optionsView = UIPickerView()
         optionsView.delegate = self
@@ -73,7 +92,7 @@ class FormRowCell: UITableViewCell {
         return optionsView
     }
     
-    private var defaultMultipleChoiceIndex: Int {
+    fileprivate var defaultMultipleChoiceIndex: Int {
         
         guard let formRow = formRow else {
             return 0
@@ -90,15 +109,15 @@ class FormRowCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let screenFrame = UIScreen.mainScreen().bounds
+        let screenFrame = UIScreen.main.bounds
         let accessoryViewFrame = CGRect(x: 0, y: 0, width: screenFrame.size.width, height: 44.0)
         let accessoryView = FormRowAccessoryView(frame: accessoryViewFrame)
         accessoryView.inputDelegate = self
         textField?.inputAccessoryView = accessoryView
         
-        selectionStyle = .None
+        selectionStyle = .none
         
-        textField?.addTarget(self, action: #selector(FormRowCell.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+        textField?.addTarget(self, action: #selector(FormRowCell.textFieldDidChange(_:)), for: .editingChanged)
         
         if textField?.delegate == nil {
             textField?.delegate = self
@@ -119,46 +138,46 @@ class FormRowCell: UITableViewCell {
         return textField?.resignFirstResponder() ?? false
     }
     
-    func textFieldDidChange(textField: UITextField) {
+    func textFieldDidChange(_ textField: UITextField) {
         formRow?.value = textField.text
     }
 }
 
 extension FormRowCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return formRow?.values?[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textField?.text = formRow?.values![row]
         formRow?.selectedValueIndex = row
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return formRow?.values?.count ?? 0
     }
 }
 
 extension FormRowCell: UITextFieldDelegate {
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         formRowAccessoryViewDidPressNextButton((textField.inputAccessoryView as? FormRowAccessoryView)!)
         return false
     }
@@ -166,15 +185,15 @@ extension FormRowCell: UITextFieldDelegate {
 
 extension FormRowCell: FormRowAccessoryViewDelegate {
     
-    func formRowAccessoryViewDidPressPreviousButton(accessoryView: FormRowAccessoryView) {
+    func formRowAccessoryViewDidPressPreviousButton(_ accessoryView: FormRowAccessoryView) {
         inputAccessoryDelegate?.formRowCellDidPressPreviousButton(self)
     }
     
-    func formRowAccessoryViewDidPressNextButton(accessoryView: FormRowAccessoryView) {
+    func formRowAccessoryViewDidPressNextButton(_ accessoryView: FormRowAccessoryView) {
         inputAccessoryDelegate?.formRowCellDidPressNextButton(self)
     }
     
-    func formRowAccessoryViewDidPressDoneButton(accessoryView: FormRowAccessoryView) {
+    func formRowAccessoryViewDidPressDoneButton(_ accessoryView: FormRowAccessoryView) {
         inputAccessoryDelegate?.formRowCellDidPressDoneButton(self)
     }
 }

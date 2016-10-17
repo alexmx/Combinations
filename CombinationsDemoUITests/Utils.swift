@@ -11,14 +11,14 @@ import XCTest
 
 extension XCTestCase {
     
-    func tapElementAndWaitForKeyboardToAppear(element: XCUIElement) {
+    func tapElementAndWaitForKeyboardToAppear(_ element: XCUIElement) {
         let keyboard = XCUIApplication().keyboards.element
         while (true) {
             element.tap()
             if keyboard.exists {
                 break;
             }
-            NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
+            RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.5))
         }
     }
 }

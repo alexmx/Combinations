@@ -7,11 +7,15 @@
 //
 
 import XCTest
-@testable import Combinations
+import Combinations
 
 class CombinationTests1: CombinationsSpec {
     
-    override class func valuesForCombinations() -> Matrix {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override class func valuesForCombinations() -> [[Any]]? {
         return [
             [1, 2, 3, 4],
             ["1", "2", "3"],
@@ -20,7 +24,7 @@ class CombinationTests1: CombinationsSpec {
         ]
     }
     
-    override func assertCombination(combination: [AnyObject]) {
+    override func assertCombination(_ combination: [Any]) {
         
         print(combination)
         
@@ -33,7 +37,7 @@ class CombinationTests1: CombinationsSpec {
 
 class CombinationTests2: CombinationsSpec {
     
-    override class func valuesForCombinations() -> Matrix {
+    override class func valuesForCombinations() -> [[Any]]? {
         
         return [
             [1, 2],
@@ -41,7 +45,7 @@ class CombinationTests2: CombinationsSpec {
         ]
     }
     
-    override func assertCombination(combination: [AnyObject]) {
+    override func assertCombination(_ combination: [Any]) {
         
         if let number = combination[0] as? Int,
             let string = combination[1] as? String {

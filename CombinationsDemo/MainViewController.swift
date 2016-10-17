@@ -31,31 +31,31 @@ class MainViewController: FormViewController {
         
         firstNameRow = FormRow(title: "First Name", value: nil)
         emailRow = FormRow(title: "Email", value: nil)
-        emailRow.rowType = .Email
+        emailRow.rowType = .email
         passwordRow = FormRow(title: "Password", value: nil)
-        passwordRow.rowType = .Passcode
+        passwordRow.rowType = .passcode
         genderRow = FormRow(title: "Gender", values: ["Male", "Female"])
         
         rows = [firstNameRow, emailRow, passwordRow, genderRow]
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: FormViewControllerDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows?.count ?? 0
     }
     
-    override func formViewController(controller: FormViewController, formRowForIndexPath indexPath: NSIndexPath) -> FormRow {
-        return rows![indexPath.row]
+    override func formViewController(_ controller: FormViewController, formRowForIndexPath indexPath: IndexPath) -> FormRow {
+        return rows![(indexPath as NSIndexPath).row]
     }
     
     // MARK: Actions
     
-    @IBAction func didPressValidate(sender: UIBarButtonItem) {
+    @IBAction func didPressValidate(_ sender: UIBarButtonItem) {
     
         print("Validate")
     }
