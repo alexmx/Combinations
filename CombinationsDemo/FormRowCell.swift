@@ -117,7 +117,7 @@ class FormRowCell: UITableViewCell {
         return textField?.resignFirstResponder() ?? false
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         formRow?.value = textField.text
     }
 }

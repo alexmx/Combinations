@@ -10,7 +10,7 @@ import Foundation
 
 public typealias Matrix = [[AnyObject]]
 
-@objc
+@objcMembers
 public final class CombinationsGenerator: NSObject {
     
     func cartesianProduct(forMatrix matrix: Matrix) -> Matrix {

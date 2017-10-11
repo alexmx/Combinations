@@ -45,15 +45,15 @@ class FormRowAccessoryView: UIToolbar {
         tintColor = UIColor.darkGray
     }
     
-    func previousDidPress(_ item: UIBarButtonItem) {
+    @objc func previousDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressPreviousButton(self)
     }
     
-    func nextDidPress(_ item: UIBarButtonItem) {
+    @objc func nextDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressNextButton(self)
     }
     
-    func doneDidPress(_ item: UIBarButtonItem) {
+    @objc func doneDidPress(_ item: UIBarButtonItem) {
         inputDelegate?.formRowAccessoryViewDidPressDoneButton(self)
     }
 }
