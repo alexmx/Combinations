@@ -53,7 +53,7 @@ class CombinationsDemoUITests: CombinationsSpec {
             // Perform required asserts
             
         } else {
-            XCTFail()
+            XCTFail("Something went wrong")
         }
     }
 }

@@ -1,17 +1,18 @@
 Pod::Spec.new do |s|
 
   s.name          = "Combinations"
-  s.version       = "1.0.0"
-  s.summary       = "Brute-force unit & UI testing. Generates tests on the fly."
+  s.version       = "1.0.1"
+  s.summary       = "Blazingly fast test generator suited for boundary and brute force testing."
 
   s.description   = <<-DESC
-                      Combinations is an iOS testing utility framework suited for fast boundary testing. It gets a set of input test data values and transforms it in run-time tests for each generated combination of values.
+                      Combinations is an iOS testing utility framework suited for fast boundary testing. 
+                      It gets a set of input test data values and transforms it in run-time tests for each generated combination of values.
                     DESC
 
 
   s.homepage              = "https://github.com/alexmx/Combinations"
   s.license               = "MIT"
-  s.authors               = { "Alex Maimescu" => "maimescu.alex@gmail.com" }
+  s.authors               = "Alex Maimescu"
 
   s.platform              = :ios
   s.ios.deployment_target = '8.0'
